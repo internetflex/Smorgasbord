@@ -9,7 +9,6 @@ namespace UnitTests
         [Theory]
         [InlineData(new[] { "cat", "baby", "dog", "bird", "car", "ax" }, "tcabnihjs", "cat")]
         [InlineData(new[] { "cat", "baby", "dog", "bird", "car", "ax" }, "tbcanihjs", "cat")]
-        [InlineData(new[] { "cat", "baby", "dog", "bird", "car", "ax" }, "tcabnihjs", "cat")]
         [InlineData(new[] { "cat", "baby", "dog", "bird", "car", "ax" }, "bbabylkkj", "baby")]
         [InlineData(new[] { "cat", "baby", "dog", "bird", "car", "ax" }, "ccc", "")]
         [InlineData(new[] { "cat", "baby", "dog", "bird", "car", "ax" }, "breadmaking", "bird")]
