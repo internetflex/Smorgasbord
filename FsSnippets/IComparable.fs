@@ -1,4 +1,7 @@
-﻿    interface IComparable<Currency> with
+﻿module Compare
+
+(*
+    interface IComparable<Currency> with
         member this.CompareTo other = compare this.Code other.Code
 
     interface IComparable with
@@ -32,4 +35,4 @@ type Concept =
             if this.Name.Namespace = other.Name.Namespace
             then compare this.Name.LocalName other.Name.LocalName
             else compare this.Name.NamespaceName other.Name.NamespaceName
-
+*)

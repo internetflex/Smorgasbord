@@ -8,6 +8,8 @@ namespace TestProject
         public static void ListCombinations(int[] startIndexes, int[] maxIndexes, Action<List<int>> dataSelectionHandler)
         {
             var increment = 0;
+            
+            // The first function returns the initial values to the function chain
             var combinedIndexers = Pipe(() => (increment, startIndexes), CreateIndexUpdater(maxIndexes[0], 0));
            
             for (var i = 1; i < startIndexes.Length; i++)
@@ -27,6 +29,7 @@ namespace TestProject
                 result = combinedIndexers();
             }
 
+            //Defines function with closure on max and offset
             Func<(int, int[]), (int, int[])> CreateIndexUpdater(int max, int offset) =>
                 parameters =>
                 {
@@ -43,6 +46,7 @@ namespace TestProject
                     return (0, indexes);
                 };
 
+            // Create a combined parameterless function using output of f as the input to the next function g 
             Func<(int CarryOverIncrement, int[] Indexes)> Pipe(Func<(int, int[])> f, Func<(int, int[]), (int, int[])> g) => () => g(f());
         }
     }
