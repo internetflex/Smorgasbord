@@ -1,4 +1,4 @@
-# Smorgasbord-1
+# Smorgasbord
 Collection of test ideas and algorithms
 This is a mix collection of HackerRank tests. 
 
