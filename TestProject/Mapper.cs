@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace TestProject
 {
-    public class Mapper<TSource,TResult> where TSource : ISource 
-                                         where TResult : IResult,new()
+    public class Mapper<TSource, TResult> where TSource : ISource
+                                         where TResult : IResult, new()
     {
         TResult Map(TSource source)
         {
@@ -14,15 +14,16 @@ namespace TestProject
             return target;
         }
     }
-    
-public interface ISource
-{ 
-    Dictionary<string, object> GetNameValues();
-}
 
-public interface IResult
-{
-    void SetNameValues(Dictionary<string, object> nameValues)
+    public interface ISource
+    {
+        Dictionary<string, object> GetNameValues();
+    }
+
+    public interface IResult
+    {
+        void SetNameValues(Dictionary<string, object> nameValues);
+    }
 }
 
 /*
